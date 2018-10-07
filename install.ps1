@@ -1,6 +1,6 @@
 Function Install-Nodejs() {
     $nodeJsExePath = "C:\Program Files\nodejs\node.exe"
-    if (!(Test-Path $nodeJsExePath)) {
+    if ((Test-Path $nodeJsExePath)) {
         Write-Output "Nodejs already installed."
         return;
     }
@@ -12,7 +12,7 @@ Function Install-Nodejs() {
 }
 Function Install-Vscode() {
     $codeCmdPath = "C:\Program Files (x86)\Microsoft VS Code\bin\code.cmd"
-    if (!(Test-Path $codeCmdPath)) {
+    if (Test-Path $codeCmdPath) {
         Write-Output "VsCode already installed."
         return;
     }
@@ -30,7 +30,7 @@ Function Refresh-Path () {
 
 Function Install-Git () {
     $gitExePath = "C:\Program Files\Git\bin\git.exe"
-    if (!(Test-Path $gitExePath)) {
+    if (Test-Path $gitExePath) {
         Write-Output "Git already installed."
         return;
     }
