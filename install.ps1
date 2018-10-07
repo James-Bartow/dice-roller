@@ -79,7 +79,9 @@ mkdir C:\learn_code
 cd C:\learn_code
 git clone https://github.com/timothy-mcroy/tutorials.git
 cd tutorials
-git pull
+git checkout master
+git pull origin master
 git branch development/$env:USERNAME master
 git checkout development/$env:USERNAME
+
 code C:\learn_code\tutorials
