@@ -58,3 +58,9 @@ $versions = @(
 )
 
 $versions | Format-Table -Property Software, Version
+
+
+mkdir C:\learn_code
+cd C:\learn_code
+git clone https://github.com/timothy-mcroy/tutorials.git
+code C:\learn_code\tutorials
