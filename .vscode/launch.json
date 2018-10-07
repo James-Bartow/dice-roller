@@ -8,6 +8,13 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
+            "program": "${workspaceFolder}/james_dice\\index.js",
+            "console":"integratedTerminal"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
             "program": "${workspaceFolder}/dice_roller\\index.js",
             "console":"integratedTerminal"
         }
