@@ -1,0 +1,16 @@
+{
+  "name": "dice_roller",
+  "version": "1.0.0",
+  "description": "A starter project that will teach someone programming while trying to build a dice rolling application",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "learning",
+    "dice"
+  ],
+  "author": "",
+  "license": "MIT"
+}
