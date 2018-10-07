@@ -1,4 +1,9 @@
 Function Install-Nodejs() {
+    $nodeJsExePath = "C:\Program Files\nodejs\node.exe"
+    if (!(Test-Path $nodeJsExePath)) {
+        Write-Output "Nodejs already installed."
+        return;
+    }
     Write-Output "Downloading nodejs"
     Invoke-WebRequest -Uri https://nodejs.org/dist/v8.12.0/node-v8.12.0-x64.msi -OutFile C:\node-installer.msi
     Write-Output "Starting node installation"
@@ -6,6 +11,11 @@ Function Install-Nodejs() {
     Write-Output "Node install finished"
 }
 Function Install-Vscode() {
+    $codeCmdPath = "C:\Program Files (x86)\Microsoft VS Code\bin\code.cmd"
+    if (!(Test-Path $codeCmdPath)) {
+        Write-Output "VsCode already installed."
+        return;
+    }
     Write-Output "Downloading vscode"
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
     Invoke-WebRequest -Uri https://vscode-update.azurewebsites.net/latest/win32/stable -OutFile $env:TEMP\vscode-stable.exe
@@ -19,6 +29,11 @@ Function Refresh-Path () {
 }
 
 Function Install-Git () {
+    $gitExePath = "C:\Program Files\Git\bin\git.exe"
+    if (!(Test-Path $gitExePath)) {
+        Write-Output "Git already installed."
+        return;
+    }
     Write-Output "Downloading git installer"
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
     Invoke-WebRequest -Uri https://github.com/git-for-windows/git/releases/download/v2.19.1.windows.1/Git-2.19.1-64-bit.exe -OutFile $env:TEMP\install-git.exe
