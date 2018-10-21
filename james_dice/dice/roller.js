@@ -2,7 +2,7 @@
 function rolldice(){
     return Math.floor( Math.random() *10+1);
 }
-function tonsOfDice(dicePool){
+function RollDiceOfPoolSize(dicePool){
     let diceResults=[];
     for(var i=0; i < dicePool; i++){
         let rollResult= rolldice();
@@ -12,5 +12,5 @@ function tonsOfDice(dicePool){
 }
 module.exports = {
     Rolldice : rolldice,
-    Tonsofdice : tonsOfDice
+    RollDiceOfPoolSize : RollDiceOfPoolSize
 }

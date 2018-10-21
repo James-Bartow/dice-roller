@@ -14,7 +14,7 @@ rl.on("line",line=>{
     console.log("successes: "+successes)
     rl.prompt("enter another die roll")
 })
-let diceResult=Dice.Tonsofdice(5)
+let diceResult=Dice.RollDiceOfPoolSize(5)
 console.log(diceResult)
 console.log(Rules.GetSuccesses(diceResult))
 rl.prompt()
