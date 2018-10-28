@@ -7,14 +7,16 @@ const rl = readline.createInterface({
     output: process.stdout,
     prompt: 'Enter a die roll >'
   });
+let rules= new Rules()
+let roller= new Roller()
 rl.on("line",line=>{
-    let diceresults= Roller.RollDicePool(line,10)   
+    let diceresults= roller.RollDicePool(line,10)   
     console.log(diceresults)
-    let successes= Rules.GetSuccesses(diceresults)
+    let successes= rules.GetSuccesses(diceresults)
     console.log("successes: "+successes)
     rl.prompt("enter another die roll")
 })
 let diceResult=Dice.RollDiceOfPoolSize(5)
 console.log(diceResult)
-console.log(Rules.GetSuccesses(diceResult))
+console.log(rules.GetSuccesses(diceResult))
 rl.prompt()
