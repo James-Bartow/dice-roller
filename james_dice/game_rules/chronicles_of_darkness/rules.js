@@ -6,7 +6,7 @@ class CodRules{
         let successes=0;
         for (var i=0; i< diceResults.length; i++){
             if (diceResults[i] >=AgainNumber){
-                successes=successes+1;
+                successes=successes+1; 
             }
         }
         return successes;

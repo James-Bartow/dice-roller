@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1541351949098" clover="3.2.0">
+  <project timestamp="1541351949098" name="All files">
+    <metrics statements="14" coveredstatements="14" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4" elements="20" coveredelements="20" complexity="0" loc="14" ncloc="14" packages="2" files="2" classes="2">
+      <package name="dice">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <file name="roller.js" path="C:\learn_code\tutorials\james_dice\dice\roller.js">
+          <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+          <line num="3" count="7" type="stmt"/>
+          <line num="6" count="3" type="stmt"/>
+          <line num="7" count="3" type="stmt"/>
+          <line num="8" count="7" type="stmt"/>
+          <line num="9" count="7" type="stmt"/>
+          <line num="11" count="3" type="stmt"/>
+          <line num="13" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="game_rules.chronicles_of_darkness">
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <file name="rules.js" path="C:\learn_code\tutorials\james_dice\game_rules\chronicles_of_darkness\rules.js">
+          <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="6" count="2" type="stmt"/>
+          <line num="7" count="2" type="stmt"/>
+          <line num="8" count="8" type="cond" truecount="2" falsecount="0"/>
+          <line num="9" count="5" type="stmt"/>
+          <line num="12" count="2" type="stmt"/>
+          <line num="15" count="1" type="stmt"/>
+        </file>
+      </package>
+    </metrics>
+  </project>
+</coverage>
