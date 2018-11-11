@@ -8,7 +8,7 @@ const rl = readline.createInterface({
     prompt: 'Enter a die roll >'
   });
 let rules= new Rules()
-let roller= new Roller()
+let roller= new Roller(rules)
 rl.on("line",line=>{
     let diceresults= roller.RollDicePool(line,10)   
     console.log(diceresults)
