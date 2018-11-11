@@ -1,5 +1,6 @@
-const roller = require('./roller')
+const Roller = require('./roller')
 const jestrandom = require('jest-mock-random')
+roller = new Roller()
 describe('Dice roler should roll dice', () => {
     it('should roll dice of length 5', () => {
         let poolsize=5
