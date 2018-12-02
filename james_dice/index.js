@@ -2,6 +2,7 @@ const Dice = require ('./dice/roller')
 const Rules = require('./game_rules/chronicles_of_darkness/rules')
 const Roller = require('./game_rules/chronicles_of_darkness/CodRoller')
 const   readline= require("readline")
+const Parser = require('./game_rules/chronicles_of_darkness/parser')
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -9,14 +10,17 @@ const rl = readline.createInterface({
   });
 let rules= new Rules()
 let roller= new Roller()
+let parser= new Parser()
 rl.on("line",line=>{
-    let diceresults= roller.RollDicePool(line,10, true)   
+    let parseResults= parser.parse(line)
+    if(!parseResults.isValid){
+        console.log ("Invalid Input!!!")
+        return
+    }
+    let diceresults= roller.RollDicePool(parseResults.dicePoolSize,parseResults.againsLevel, parseResults.rote)   
     console.log(diceresults)
     let successes= rules.GetSuccesses(diceresults)
     console.log("successes: "+successes)
     rl.prompt("enter another die roll")
 })
-let diceResult=Dice.RollDiceOfPoolSize(5)
-console.log(diceResult)
-console.log(rules.GetSuccesses(diceResult))
 rl.prompt()
