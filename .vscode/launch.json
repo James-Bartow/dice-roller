@@ -14,7 +14,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "Launch End Result",
             "program": "${workspaceFolder}/dice_roller\\index.js",
             "console":"integratedTerminal"
         }

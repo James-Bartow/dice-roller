@@ -4,7 +4,8 @@
   "description": "A dice roller made by james bartow",
   "main": "index.js",
   "scripts": {
-    "test": "test",
+    "test": "jest",
+    "watch": "jest --watchAll --coverage",
     "start": "node index.js"
   },
   "keywords": [
@@ -12,5 +13,9 @@
     "dice"
   ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "jest-mock-random": "^1.0.2"
+  }
 }

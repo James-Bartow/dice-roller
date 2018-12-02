@@ -1,24 +1,26 @@
-console.log("Hello James!")
-
-// Comment are any line that starts with a slash
-
-/*
-or are surrounded like this
-*/
-
-let a_number = 5;
-let a_string = "Some string";
-let a_decimal_number = 3.14;
-let an_array = [5, "String", a_number];
-let an_object = {
-    property: "value",
-    other_property: 5,
-    some_property_that_is_an_array: an_array
-}
-
-console.log("a_number: " + a_number);
-console.log("a_string " + a_string);
-console.log("an_array " + an_array);
-console.log("an_object " + an_object);
-
-console.log("A random number between 0 and 1 : " + Math.random())
+const Dice = require ('./dice/roller')
+const Rules = require('./game_rules/chronicles_of_darkness/rules')
+const Roller = require('./game_rules/chronicles_of_darkness/CodRoller')
+const   readline= require("readline")
+const Parser = require('./game_rules/chronicles_of_darkness/parser')
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+    prompt: 'Enter a die roll >'
+  });
+let rules= new Rules()
+let roller= new Roller()
+let parser= new Parser()
+rl.on("line",line=>{
+    let parseResults= parser.parse(line)
+    if(!parseResults.isValid){
+        console.log ("Invalid Input!!!")
+        return
+    }
+    let diceresults= roller.RollDicePool(parseResults.dicePoolSize,parseResults.againsLevel, parseResults.rote)   
+    console.log(diceresults.sort((a,b) => b-a))
+    let successes= rules.GetSuccesses(diceresults)
+    console.log("successes: "+successes)
+    rl.prompt("enter another die roll")
+})
+rl.prompt()
