@@ -18,7 +18,7 @@ rl.on("line",line=>{
         return
     }
     let diceresults= roller.RollDicePool(parseResults.dicePoolSize,parseResults.againsLevel, parseResults.rote)   
-    console.log(diceresults)
+    console.log(diceresults.sort((a,b) => b-a))
     let successes= rules.GetSuccesses(diceresults)
     console.log("successes: "+successes)
     rl.prompt("enter another die roll")
